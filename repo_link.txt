@@ -1,2 +1,2 @@
-https://github.com/YOUR_GITHUB_USERNAME/devops-nodeapp
-# Note: Add the course coordinator (Mr. Prashanth Reddy C) as a collaborator on this repository before final submission.
+https://github.com/veerxp/nodeapp-jenkins.git
+# Note: Course coordinator (Mr. Prashanth Reddy C) should be added as a collaborator on this repository before final submission.
