@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_ENV = 'production'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -15,15 +11,15 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing project dependencies with npm install...'
-                sh 'npm install'
+                echo 'Installing all dependencies...'
+                sh 'npm install --include=dev'
             }
         }
 
         stage('Automated Tests (CI Enhancement)') {
             steps {
                 echo 'Running unit and integration tests with Jest...'
-                sh 'npm test'
+                sh 'npx jest --coverage'
             }
         }
 
