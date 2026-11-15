@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodeapp-config
+  labels:
+    app: nodeapp
+data:
+  NODE_ENV: "production"
+  PORT: "3000"

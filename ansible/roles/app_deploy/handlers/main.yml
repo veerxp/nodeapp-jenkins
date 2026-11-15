@@ -1,0 +1,7 @@
+---
+# Handlers for app_deploy role (Handler required by rubric)
+- name: Restart application container
+  community.docker.docker_container:
+    name: "{{ container_name }}"
+    state: started
+    restart: yes

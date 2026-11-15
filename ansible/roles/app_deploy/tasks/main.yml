@@ -1,0 +1,26 @@
+---
+# Tasks for app_deploy role
+- name: Ensure Docker service is running
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Create application deployment directory
+  file:
+    path: "/opt/{{ app_name }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy Node.js application container
+  community.docker.docker_container:
+    name: "{{ container_name }}"
+    image: "{{ docker_image }}"
+    state: started
+    restart_policy: unless-stopped
+    published_ports:
+      - "{{ host_port }}:{{ container_port }}"
+    env:
+      NODE_ENV: "{{ app_env }}"
+      PORT: "{{ container_port }}"
+  notify: Restart application container

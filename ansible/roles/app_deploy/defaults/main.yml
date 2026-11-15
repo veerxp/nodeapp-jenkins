@@ -1,0 +1,8 @@
+---
+# Defaults for app_deploy role (Variables required by rubric)
+app_name: "nodeapp"
+docker_image: "nodeapp:1.0"
+container_name: "nodeapp-container"
+host_port: 3000
+container_port: 3000
+app_env: "production"

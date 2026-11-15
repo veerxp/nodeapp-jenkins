@@ -1,0 +1,9 @@
+---
+# Playbook deploying Node.js application using role, variables, and handlers
+- name: Deploy Node.js REST Application with Docker
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  roles:
+    - app_deploy
