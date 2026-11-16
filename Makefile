@@ -1,35 +1,35 @@
-# ── Makefile — handy shortcuts ───────────────────────────
+
 .PHONY: install dev test build up down logs clean
 
-install:        ## Install npm dependencies
+install:       
 	npm install
 
-dev:            ## Run app in dev mode (hot-reload)
+dev:            
 	npm run dev
 
-test:           ## Run tests with coverage
+test:           
 	npm test
 
-build:          ## Build Docker image
+build:          
 	docker build -t nodeapp:latest .
 
-up:             ## Start all services (production mode)
+up:             
 	docker compose up -d
 
-down:           ## Stop all services
+down:          
 	docker compose down
 
-logs:           ## Tail logs from app container
+logs:           
 	docker compose logs -f app
 
-clean:          ## Remove containers, images, volumes
+clean:         
 	docker compose down -v --rmi local
 
-dev-up:         ## Start dev mode with hot-reload
+dev-up:         
 	docker compose --profile dev up -d app-dev redis
 
-shell:          ## Open shell in running container
+shell:          
 	docker exec -it nodeapp sh
 
-help:           ## Show this help
+help:           
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
