@@ -1,2 +1,0 @@
-https://github.com/veerxp/nodeapp-jenkins.git
-# Note: Course coordinator (Mr. Prashanth Reddy C) should be added as a collaborator on this repository before final submission.
