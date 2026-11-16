@@ -1,4 +1,4 @@
-# 🚀 Node.js DevOps Project
+
 
 A production-ready Node.js Express app with full DevOps automation: Docker, CI/CD, testing, and health checks.
 
